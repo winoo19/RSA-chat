@@ -52,12 +52,12 @@ To get a local copy up and running follow these simple steps.
     pip install -r requirements.txt
     ```
 
-3.1 Run the chat's interface
+3. Run the chat's interface
     ```sh
     python -m src.criptochat
     ```
 
-3.2 Or run the Modular Arithmetic Engine interface
+4. Or run the Modular Arithmetic Engine interface
     ```sh
     python -m src.imatlab
     ```
