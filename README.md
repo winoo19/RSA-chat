@@ -5,7 +5,7 @@
 
 <!-- PROJECT LOGO -->
 <div align="center">
-  <img src="https://api.junia.ai/storage/v1/object/sign/user-generated-images/18d32214-afe4-4bec-8652-8e6d1b062e19/fce27026-a09f-4199-a48e-80a12810ae8d.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJ1c2VyLWdlbmVyYXRlZC1pbWFnZXMvMThkMzIyMTQtYWZlNC00YmVjLTg2NTItOGU2ZDFiMDYyZTE5L2ZjZTI3MDI2LWEwOWYtNDE5OS1hNDhlLTgwYTEyODEwYWU4ZC5wbmciLCJpYXQiOjE3MDA4ODEyMjAsImV4cCI6MTg1ODU2MTIyMH0.aTQlOzhzCDm_Wnj_tO1kDx-BFr_73tuyOEq6gJdf-gw" alt="Logo" width="350">
+  <img src="https://github.com/user-attachments/assets/b8744b93-95de-4b01-b5ac-0c75de0c9479" alt="Logo" width="350">
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -40,6 +40,8 @@ To get a local copy up and running follow these simple steps.
 
 - Python 3
 
+### Steps
+
 1. Clone the repo
    ```sh
    git clone
@@ -50,7 +52,7 @@ To get a local copy up and running follow these simple steps.
     pip install -r requirements.txt
     ```
 
-4. Run the chat's interface
+3. Run the chat's interface
     ```sh
     python -m src.criptochat
     ```
@@ -63,7 +65,7 @@ To get a local copy up and running follow these simple steps.
   <a href="https://github.com/winoo19" style="margin: 0px 10px">
     <img src="https://github.com/winoo19.png" style="border-radius: 50%;" width="50" height="50">
   </a>
-  <a href="https://github.com/gomicoder17" style="margin: 0px 10px">
-    <img src="https://github.com/goomii17" style="border-radius: 50%;" width="50" height="50">
+  <a href="https://github.com/goomii17" style="margin: 0px 10px">
+    <img src="https://github.com/goomii17.png" style="border-radius: 50%;" width="50" height="50">
   </a>
 </div>
