@@ -3,6 +3,7 @@ import os
 import sys
 import signal
 import json
+from platform import system as system_name
 
 
 def signal_handler(sig, frame):
@@ -11,6 +12,7 @@ def signal_handler(sig, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
+command = "cls" if system_name().lower().startswith("win") else "clear"
 chat = None
 
 
@@ -36,11 +38,11 @@ class CriptoChat:
             print("Error al guardar los usuarios:", e.__class__.__name__, e)
 
     def registrar_usuario(self):
-        os.system("cls|clear")
+        os.system(command)
         print(" " * 15 + "Registro de usuario")
         nombre = input("\nNombre de usuario: ")
         while nombre in self.users and self.current_user is None:
-            os.system("cls|clear")
+            os.system(command)
             print("El nombre de usuario ya existe")
             print("\n1. Volver a intentarlo")
             print("2. Log in")
@@ -50,7 +52,7 @@ class CriptoChat:
                 print("Opción inválida")
                 option = input("\n-> ")
             if option == "1":
-                os.system("cls|clear")
+                os.system(command)
                 nombre = input("Nombre de usuario: ")
             elif option == "2":
                 self.login()
@@ -83,14 +85,14 @@ class CriptoChat:
         print("Clave privada:", sk)
 
     def login(self):
-        os.system("cls|clear")
+        os.system(command)
         print(" " * 15 + "Log in")
         nombre = input("\nNombre de usuario: ")
         contraseña = input("Contraseña: ")
         if nombre in self.users and self.users[nombre]["contraseña"] == contraseña:
             self.current_user = self.users[nombre]
         else:
-            os.system("cls|clear")
+            os.system(command)
             if nombre not in self.users:
                 print("El usuario no existe")
             else:
@@ -112,7 +114,7 @@ class CriptoChat:
     def start_menu(self):
         """Log in or register"""
         while self.current_user is None:
-            os.system("cls|clear")
+            os.system(command)
             print(" " * 15 + "CriptoChat: Inicio")
             print("\n1. Register")
             print("2. Log in")
@@ -129,7 +131,7 @@ class CriptoChat:
                 sys.exit()
 
     def generar_claves(self):
-        os.system("cls|clear")
+        os.system(command)
         print(" " * 15 + "Generar claves")
         error = True
         while error:
@@ -146,7 +148,7 @@ class CriptoChat:
         print("Nueva clave privada:", sk)
 
     def registrar_claves(self):
-        os.system("cls|clear")
+        os.system(command)
         print(" " * 15 + "Registrar claves")
         error = True
         while error:
@@ -164,7 +166,7 @@ class CriptoChat:
         print("Nueva clave privada:", (n, d))
 
     def añadir_contacto(self):
-        os.system("cls|clear")
+        os.system(command)
         print(" " * 15 + "Añadir contacto")
         print("\nContactos:", ", ".join(self.current_user["contactos"].keys()), "\n")
         nombre = input("\nNombre del contacto: ")
@@ -185,12 +187,12 @@ class CriptoChat:
         print("\nContacto registrado!")
 
     def enviar_mensaje(self):
-        os.system("cls|clear")
+        os.system(command)
         print(" " * 15 + "Enviar mensaje")
         print("\nContactos:", ", ".join(self.current_user["contactos"].keys()), "\n")
         nombre = input("\nNombre del contacto: ")
         while nombre not in self.current_user["contactos"]:
-            os.system("cls|clear")
+            os.system(command)
             print("Contacto no encontrado!")
             print("\n1. Añadir contacto")
             print("2. Volver a intentarlo")
@@ -216,7 +218,7 @@ class CriptoChat:
         print("\nMensaje cifrado:", " ".join(map(str, c)))
 
     def recibir_mensaje(self):
-        os.system("cls|clear")
+        os.system(command)
         print(" " * 15 + "Recibir mensaje")
         error = True
         while error:
@@ -234,7 +236,7 @@ class CriptoChat:
                 error = False
 
     def cambiar_padding(self):
-        os.system("cls|clear")
+        os.system(command)
         print(" " * 15 + "Cambiar padding")
         error = True
         while error:
@@ -250,7 +252,7 @@ class CriptoChat:
         self.start_menu()
 
     def modificar_contacto(self):
-        os.system("cls|clear")
+        os.system(command)
         if len(self.current_user["contactos"]) == 0:
             print("\nNo tienes contactos!")
             return
@@ -258,7 +260,7 @@ class CriptoChat:
         print("\nContactos:", ", ".join(self.current_user["contactos"].keys()), "\n")
         nombre = input("\nNombre del contacto antiguo: ")
         while nombre not in self.current_user["contactos"]:
-            os.system("cls|clear")
+            os.system(command)
             print("Contacto no encontrado!")
             nombre = input("\nNombre del contacto antiguo: ")
         print("1. Cambiar nombre")
@@ -298,7 +300,7 @@ class CriptoChat:
     def chat_menu(self):
         salir = False
         while not salir:
-            os.system("cls|clear")
+            os.system(command)
             print(
                 " " * 15 + "CriptoChat" + " " * 5 + "👤 " + self.current_user["nombre"]
             )
